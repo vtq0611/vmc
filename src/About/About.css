@@ -1,0 +1,34 @@
+.about-section {
+  width: 100%;
+  background: #fff;
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  box-sizing: border-box;
+  margin-top: 60px;
+}
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(211,47,47,0.7);
+  text-align: center;
+}
+.about-title {
+  color: #d32f2f;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  margin-top: unset;
+}
+.about-desc {
+  color: #333;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  text-align: justify;
+  text-indent: 2em;
+}

@@ -1,0 +1,91 @@
+.register-container {
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f9f9f9, #f1f1f1);
+    padding: 1rem;
+}
+
+.register-form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.register-form h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 50px;
+}
+
+.register-form input {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.register-form input:focus {
+    outline: none;
+    border-color: #EA0029;
+    box-shadow: 0 0 4px rgba(234, 0, 41, 0.3);
+}
+
+.register-form button {
+    padding: 0.75rem;
+    background: #EA0029;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.1s ease;
+}
+
+.register-form button:hover:not(:disabled) {
+    background: #c40024;
+    transform: translateY(-1px);
+}
+
+.register-form button:disabled {
+    background: #bbb;
+    cursor: not-allowed;
+}
+
+.error {
+    color: #e63946;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: -0.5rem;
+}
+
+/* 🔹 Responsive */
+@media (max-width: 480px) {
+    .register-form {
+        padding: 1.5rem;
+        border-radius: 8px;
+        max-width: 100%;
+    }
+
+    .register-form h2 {
+        font-size: 1.25rem;
+    }
+
+    .register-form input,
+    .register-form button {
+        font-size: 0.95rem;
+        padding: 0.65rem;
+    }
+}

@@ -1,0 +1,115 @@
+import { useEffect } from "react";
+
+const ChatbotWidget = () => {
+    useEffect(() => {
+        import("flowise-embed/dist/web.js").then(({ default: Chatbot }) => {
+            Chatbot.init({
+                chatflowid: "dbec6a99-e4c3-491a-ab5a-67cd3c85b1b5",
+                apiHost: "https://chatbot.viettelmanufacturing.vn",
+                chatflowConfig: {
+                    /* Chatflow Config */
+                },
+                observersConfig: {
+                    /* Observers Config */
+                },
+                theme: {
+                    button: {
+                        backgroundColor: '#D13A47',
+                        right: 20,
+                        bottom: 20,
+                        size: 48,
+                        dragAndDrop: true,
+                        iconColor: 'white',
+                        autoWindowOpen: {
+                            autoOpen: true,
+                            openDelay: 2,
+                            autoOpenOnMobile: false
+                        }
+                    },
+                    tooltip: {
+                        showTooltip: true,
+                        tooltipMessage: 'Trợ lý ảo VMC-AI',
+                        tooltipBackgroundColor: 'linear-gradient(90deg, rgba(179, 30, 52, 1) 0%, rgba(255, 102, 102, 1) 100%)',
+                        tooltipTextColor: 'white',
+                        tooltipFontSize: 16
+                    },
+                    disclaimer: {
+                        title: 'Lưu ý',
+                        message: 'Bằng việc sử dụng chatbot này, bạn đồng ý với <a target="_blank" href="https://flowiseai.com/terms">Điều khoản & Điều kiện</a>',
+                        textColor: 'gray',
+                        buttonColor: '#3b82f6',
+                        buttonText: 'Bắt đầu cuộc hội thoại',
+                        buttonTextColor: 'white',
+                        blurredBackgroundColor: 'rgba(0, 0, 0, 0.4)',
+                        backgroundColor: 'white'
+                    },
+                    customCSS: ``,
+                    chatWindow: {
+                        showTitle: true,
+                        showAgentMessages: true,
+                        title: 'Trợ lý ảo VMC-AI ',
+                        titleAvatarSrc: '/public/favicon.ico',
+                        welcomeMessage: 'Hello! Tôi có thể giúp gì cho bạn?',
+                        errorMessage: 'Đã xảy ra lỗi, vui lòng thử lại.',
+                        backgroundColor: '#ffffff',
+                        backgroundImage: 'nhập đường dẫn hoặc liên kết hình ảnh',
+                        height: 650,
+                        width: 450,
+                        fontSize: 16,
+                        starterPrompts: [
+                            "Quy trình đào tạo nhân sự mới",
+                            "Đảm bảo ATTT",
+                            "Quy trình tuyển dụng"
+                        ],
+                        starterPromptFontSize: 15,
+                        clearChatOnReload: false,
+                        sourceDocsTitle: 'Trích xuất:',
+                        renderHTML: true,
+                        botMessage: {
+                            backgroundColor: '#f7f8ff',
+                            textColor: '#303235',
+                            showAvatar: true,
+                            avatarSrc: 'public/viettel_logo.png',
+                        },
+                        userMessage: {
+                            backgroundColor: '#3B81F6',
+                            textColor: '#ffffff',
+                            showAvatar: true,
+                            avatarSrc: 'https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png'
+                        },
+                        textInput: {
+                            placeholder: 'Nhập thông tin quy trình',
+                            backgroundColor: '#ffffff',
+                            textColor: '#303235',
+                            sendButtonColor: '#3B81F6',
+                            maxChars: 100,
+                            maxCharsWarningMessage: 'Bạn đã vượt quá giới hạn ký tự. Vui lòng nhập dưới 100 ký tự.',
+                            autoFocus: true,
+                            sendMessageSound: false,
+                            sendSoundLocation: 'send_message.mp3',
+                            receiveMessageSound: false,
+                            receiveSoundLocation: 'receive_message.mp3'
+                        },
+                        feedback: {
+                            color: '#303235'
+                        },
+                        dateTimeToggle: {
+                            date: true,
+                            time: true
+                        },
+                        footer: {
+                            textColor: '#303235',
+                            text: 'Powered by',
+                            company: 'VMC-AI Team',
+                            companyLink: 'https://viettelmanufacturing.vn'
+                        }
+                    }
+                }
+            });
+        });
+    }, []);
+
+    return null;
+};
+
+export default ChatbotWidget;
